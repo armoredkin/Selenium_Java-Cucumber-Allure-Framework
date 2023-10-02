@@ -26,9 +26,9 @@ Feature: Add and delete items in cart
     And user go to Cart page
     Then user can see only "3" products in the cart
     And user can see product pics is correct in cart page :
-      | imgs/galaxy_s6.jpg |
-      | imgs/sony_vaio_5.jpg   |
-      | imgs/xperia_z5.jpg |
+      | imgs/galaxy_s6.jpg   |
+      | imgs/sony_vaio_5.jpg |
+      | imgs/xperia_z5.jpg   |
     And user can see these product titles in cart page :
       | Samsung galaxy s6 |
       | Sony xperia z5    |
@@ -37,8 +37,7 @@ Feature: Add and delete items in cart
       | Samsung galaxy s6 | 360 |
       | Sony xperia z5    | 320 |
       | Sony vaio i5      | 790 |
-
-
+    And user can see total product prices is "1470" in cart page
 
 
   @deleteCart

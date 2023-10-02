@@ -1,6 +1,7 @@
 package demoblaze.stepdefinitions;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.qameta.allure.Step;
@@ -92,6 +93,11 @@ public class AddToCartSteps {
 
     @Then("product list should be empty in cart page")
     public void product_list_should_be_empty_in_cart_page() {
-        Assert.assertEquals(cart.getProductListSize(), 0);
+        Assert.assertEquals(cart.getProductListSize(), 0, "Product list is not empty");
+    }
+
+    @And("user can see total product prices is {string} in cart page")
+    public void user_can_see_total_product_prices_is_in_cart_page(String total) {
+        Assert.assertEquals(cart.getTotalPrice(), total, "Total price is wrong");
     }
 }

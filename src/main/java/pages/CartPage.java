@@ -30,8 +30,14 @@ public class CartPage {
      * className, xpath as attributes.
      */
 
+    @FindBy(id = "totalp")
+    private WebElement totalPrice;
+
     @FindBy(css = "td:nth-of-type(2)")
     private WebElement firstProductTitle;
+
+    @FindBy(css = ".btn-success")
+    private WebElement placeOrderButton;
 
     /**
      * Get first row product title
@@ -112,5 +118,20 @@ public class CartPage {
             anyElement.click();
             Thread.sleep(2000);
         }
+    }
+
+    /**
+     * Get total product price
+     * @return String total price
+     */
+    public String getTotalPrice(){
+        return totalPrice.getText();
+    }
+
+    /**
+     * Click place order button
+     */
+    public void clickPlaceOrder(){
+        placeOrderButton.click();
     }
 }
