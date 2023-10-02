@@ -1,15 +1,11 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import utilities.Constants;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ProdDetailPage {
 
@@ -40,6 +36,9 @@ public class ProdDetailPage {
     @FindBy(css = "#more-information > p")
     private WebElement productDesc;
 
+    @FindBy(css = ".btn-success")
+    private WebElement addToCartButton;
+
     /**
      * Get product title
      * @return product title
@@ -62,6 +61,13 @@ public class ProdDetailPage {
      */
     public String getProductDesc(){
         return productDesc.getText();
+    }
+
+    /**
+     * Click add to cart button
+     */
+    public void clickATCButton(){
+        addToCartButton.click();
     }
 
 }

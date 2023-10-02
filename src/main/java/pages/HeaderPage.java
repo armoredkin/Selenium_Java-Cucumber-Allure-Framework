@@ -30,6 +30,12 @@ public class HeaderPage {
     @FindBy(id = "login2")
     private WebElement loginButton;
 
+    @FindBy(id = "cartur")
+    private WebElement cartButton;
+
+    @FindBy(css = ".nav-link[href='index.html']")
+    private WebElement homeButtom;
+
     /**
      * Click sign up button in top right
      */
@@ -42,5 +48,20 @@ public class HeaderPage {
      */
     public void clickLoginHeader(){
         loginButton.click();
+    }
+
+    /**
+     * Click cart button in top right
+     */
+    public void clickCartHeader() throws InterruptedException {
+        cartButton.click();
+        Thread.sleep(2000);
+    }
+
+    /**
+     * Click home page in header
+     */
+    public void clickHomeHeader(){
+        homeButtom.click();
     }
 }
