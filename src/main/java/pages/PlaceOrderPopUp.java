@@ -49,6 +49,9 @@ public class PlaceOrderPopUp {
     @FindBy(css = "[onclick='purchaseOrder()']")
     private WebElement purchaseButton;
 
+    @FindBy(css = "#orderModal .btn-secondary")
+    private WebElement closeButton;
+
     /**
      * Fill name field
      * @param name is text inputted as name
@@ -102,8 +105,17 @@ public class PlaceOrderPopUp {
     /**
      * Click purchase button
      */
-    public void clickPurchase() {
+    public void clickPurchase() throws InterruptedException {
         purchaseButton.click();
+        Thread.sleep(2000);
+    }
+
+    /**
+     * Click close button
+     */
+    public void clickClose() throws InterruptedException {
+        closeButton.click();
+        Thread.sleep(1000);
     }
 
 }

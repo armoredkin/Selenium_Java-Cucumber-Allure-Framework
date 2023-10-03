@@ -20,7 +20,6 @@ public class ProductBrowsingSteps {
     private WebDriver driver = ThreadManager.getDriver();
     private HomePage homepage = new HomePage(driver);
     private ProdDetailPage pdp = new ProdDetailPage(driver);
-    private RegisterPopUp register = new RegisterPopUp(driver);
 
     @Step
     @When("user check product list")
