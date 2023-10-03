@@ -62,6 +62,8 @@ public class LoginPopUp {
      */
     public void clickLoginButton(){
         loginButton.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(7));
+        wait.until(ExpectedConditions.invisibilityOf(loginButton));
     }
 
 }
